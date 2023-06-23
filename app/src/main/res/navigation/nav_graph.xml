@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.navigationcomponentsexample.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_ketQua"
+            app:destination="@id/ketQua" />
+        <action
+            android:id="@+id/action_mainFragment_to_homNay"
+            app:destination="@id/homNay" />
+        <action
+            android:id="@+id/action_mainFragment_to_ketQuaDai"
+            app:destination="@id/ketQuaDai" />
+    </fragment>
+    <fragment
+        android:id="@+id/ketQua"
+        android:name="com.example.navigationcomponentsexample.KetQua"
+        android:label="fragment_ket_qua"
+        tools:layout="@layout/fragment_ket_qua" />
+    <fragment
+        android:id="@+id/homNay"
+        android:name="com.example.navigationcomponentsexample.HomNay"
+        android:label="fragment_hom_nay"
+        tools:layout="@layout/fragment_hom_nay" />
+    <fragment
+        android:id="@+id/ketQuaDai"
+        android:name="com.example.navigationcomponentsexample.KetQuaDai"
+        android:label="fragment_ket_qua_dai"
+        tools:layout="@layout/fragment_ket_qua_dai" />
+</navigation>

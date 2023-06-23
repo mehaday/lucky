@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Home"
+        android:id="@+id/home"
+        android:icon="@drawable/baseline_home_24"/>
+    <item android:title="Số kết"
+        android:id="@+id/so_ket"
+        android:icon="@drawable/baseline_my_location_24"/>
+    <item android:title="Uy tín"
+        android:id="@+id/uy_tin"
+        android:icon="@drawable/baseline_stars_24"/>
+    <item android:title="Thêm"
+        android:id="@+id/them"
+        android:icon="@drawable/baseline_menu_24"/>
+</menu>
