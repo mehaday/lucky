@@ -78,7 +78,7 @@
                 android:id="@+id/imageView3"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:src="@drawable/baseline_calendar_month_24" />
+                android:src="@drawable/baseline_stars_24" />
 
             <TextView
                 android:id="@+id/textView3"
@@ -288,7 +288,7 @@
                 android:id="@+id/imageView11"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:src="@drawable/baseline_calendar_month_24" />
+                android:src="@drawable/baseline_search_24" />
 
             <TextView
                 android:id="@+id/textView11"
