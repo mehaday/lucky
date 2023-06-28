@@ -16,44 +16,20 @@ import android.webkit.WebViewClient
 
 //class KetQua : Fragment(),View.OnClickListener {
 class KetQua : Fragment() {
-    var navController: NavController? = null
-    private lateinit var webView: WebView
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_ket_qua, container, false)
-        webView = view.findViewById(R.id.webView)
-        webView.webViewClient = WebViewClient()
+        val rootView = inflater.inflate(R.layout.fragment_ket_qua, container, false)
 
-        // Cấu hình WebView
-        webView.settings.apply {
-            javaScriptEnabled = true // Bật hỗ trợ JavaScript nếu cần
-            mixedContentMode = WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
-        }
+        // Tạo một instance của fragment mới
+        val myFragment = ketQuaXoSo()
 
-        // Load trang web
-        val url = "http://api.xosodo.vn/webview/soicaudetail?loto=90&p1=7&p2=19&limit=4&provinceId=1&dayPrize=08/11/2018&type=1"
-        webView.loadUrl(url)
+        // Thêm fragment mới vào fragment gốc
+        childFragmentManager.beginTransaction()
+            .add(R.id.abcds, myFragment)
+            .commit()
 
-        // Xóa thẻ sau khi trang web được tải hoàn thành
-        webView.webViewClient = object : WebViewClient() {
-            override fun onPageFinished(view: WebView?, url: String?) {
-                super.onPageFinished(view, url)
-                removeElementFromWebView("/html/body/section/div[1]")
-            }
-        }
-
-        return view
-    }
-    private fun removeElementFromWebView(xpath: String) {
-        val js = """
-            var element = document.evaluate('$xpath', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-            if (element) {
-                element.parentNode.removeChild(element);
-            }
-        """.trimIndent()
-
-        webView.evaluateJavascript(js, null)
+        return rootView
     }
 }

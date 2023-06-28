@@ -24,7 +24,11 @@
         android:id="@+id/ketQua"
         android:name="com.example.navigationcomponentsexample.KetQua"
         android:label="fragment_ket_qua"
-        tools:layout="@layout/fragment_ket_qua" />
+        tools:layout="@layout/fragment_ket_qua" >
+        <action
+            android:id="@+id/action_ketQua_to_xoSoMienBac"
+            app:destination="@id/xoSoMienBac" />
+    </fragment>
     <fragment
         android:id="@+id/homNay"
         android:name="com.example.navigationcomponentsexample.HomNay"
@@ -35,4 +39,9 @@
         android:name="com.example.navigationcomponentsexample.KetQuaDai"
         android:label="fragment_ket_qua_dai"
         tools:layout="@layout/fragment_ket_qua_dai" />
+    <fragment
+        android:id="@+id/xoSoMienBac"
+        android:name="com.example.navigationcomponentsexample.xoSoMienBac"
+        android:label="fragment_xo_so_mien_bac"
+        tools:layout="@layout/fragment_xo_so_mien_bac" />
 </navigation>
